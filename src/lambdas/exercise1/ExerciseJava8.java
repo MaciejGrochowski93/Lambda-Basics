@@ -3,6 +3,7 @@ package lambdas.exercise1;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -26,6 +27,10 @@ public class ExerciseJava8 {
         System.out.println("----");
         printConditionally(peopleList, person -> person.getFirstName().startsWith("M"));
 
+        System.out.println("----");
+        performConditionally(peopleList, p -> p.getFirstName().startsWith("L"), p -> System.out.println(p));
+        performConditionally(peopleList, p -> p.getFirstName().startsWith("L"), p -> System.out.println(p.getFirstName()));
+
     }
 
     public static void displayAllElements(List <Person> list){
@@ -40,6 +45,13 @@ public class ExerciseJava8 {
         for (Person person : list){
             if (predicate.test(person))
                 System.out.println(person);
+        }
+    }
+
+    public static void performConditionally(List<Person> list, Predicate<Person> predicate, Consumer<Person> consumer){
+        for (Person person : list){
+            if (predicate.test(person))
+                consumer.accept(person);
         }
     }
 }
