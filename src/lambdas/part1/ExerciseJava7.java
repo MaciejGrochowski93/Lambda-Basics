@@ -1,4 +1,6 @@
-package lambdas.exercise1;
+package lambdas.part1;
+
+import lambdas.part1.Person;
 
 import java.util.Arrays;
 import java.util.Collections;

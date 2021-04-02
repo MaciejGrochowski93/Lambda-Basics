@@ -1,4 +1,4 @@
-package lambdas;
+package lambdas.part1;
 
 public class Greeter {
 

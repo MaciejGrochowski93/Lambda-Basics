@@ -1,4 +1,4 @@
-package lambdas.exercise1;
+package lambdas.part1;
 
 public class Person {
     private String firstName;
