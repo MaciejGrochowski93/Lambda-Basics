@@ -32,6 +32,15 @@ public class MethodReferenceExample2 { public static void main(String args[]) {
 
     performConditionally(peopleList, p -> p.getAge() > 3, System.out::println);
                                                                            // p -> System.out.println(p)
+    System.out.println("----for int i----");
+    for (int i = 0; i < peopleList.size(); i++)
+        System.out.println(peopleList.get(i));
+    System.out.println("----for in----");
+    for (Person p : peopleList)
+        System.out.println(p);
+    System.out.println("----forEach----");
+    peopleList.forEach(System.out::println);
+    // peopleList.forEach(p -> System.out.println(p));
 
 }
 
